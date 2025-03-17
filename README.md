@@ -2,11 +2,20 @@
 How to run AlphaFold2 on the Crop Diversity HPC.
 
 ## Overview
-This repository contains instructions and scripts for running AlphaFold2 on the Crop Diversity HPC cluster. AlphaFold2 is a deep learning system developed by DeepMind that predicts protein structures from amino acid sequences.
+AlphaFold2 is a deep learning system developed by DeepMind that predicts protein structures from amino acid sequences. 
+
+This repository contains instructions and scripts for running AlphaFold2 on the Crop Diversity HPC cluster. 
+
+<br>
 
 ## Setup
 
-**These setup steps have already been performed. The full databases and container are located in the shared database directory `/mnt/shared/datasets/databases/alphafold`.**
+<center><b>
+    These setup steps have already been performed.
+</b></center>
+<center>
+    The full databases and container are located in the shared database directory `/mnt/shared/datasets/databases/alphafold`.
+</center>
 
 ### 1. Download Databases
 The official AlphaFold database download script requires aria2c, which is not installed on the HPC and requires root access.
@@ -23,6 +32,7 @@ Pull prebuilt AlphaFold 2.3.0 container.
 apptainer pull docker://uvarc/alphafold:2.3.0
 ```
 
+<br>
 
 ## Running AlphaFold
 
@@ -63,6 +73,8 @@ Common issues:
 - **Database connection failures**: Verify the database path is correct 
 - **GPU errors**: Make sure to request available GPU resources 
 
+<br>
+
 ## AlphaFold Output Files
 The `--output_dir` directory will have the following structure:
 
@@ -83,6 +95,8 @@ The `--output_dir` directory will have the following structure:
 ```
 
 Please see the official [AlphaFold](https://github.com/google-deepmind/alphafold/blob/main/README.md#alphafold-output) repo for a full description of all output files.
+
+<br>
 
 ---
 
