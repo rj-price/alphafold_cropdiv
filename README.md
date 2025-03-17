@@ -10,12 +10,13 @@ This repository contains instructions and scripts for running AlphaFold2 on the 
 
 ## Setup
 
-<center><b>
+<h3 align="center"><b>
     These setup steps have already been performed.
-</b></center>
-<center>
+</b></h3>
+
+<h4 align="center">
     The full databases and container are located in the shared database directory `/mnt/shared/datasets/databases/alphafold`.
-</center>
+</h4>
 
 ### 1. Download Databases
 The official AlphaFold database download script requires aria2c, which is not installed on the HPC and requires root access.
@@ -100,7 +101,7 @@ Please see the official [AlphaFold](https://github.com/google-deepmind/alphafold
 
 ---
 
-# Alphafold Analyser
+# AlphaFold Analyser
 
 [AlphaFold Analyser](https://github.com/rj-price/alphafold-analyser) is a command line tool to produce high quality visualisations of protein structures predicted by AlphaFold2. These visualisations allow the user to view the pLDDT of each residue of a protein structure and the predicted alignment error for the entire protein to rapidly infer the quality of a predicted structure. Alphafold analyser can process the results of both multimer and monomer predictions.
 
