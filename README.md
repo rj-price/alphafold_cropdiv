@@ -61,6 +61,7 @@ sbatch alphafold_multimer_submit.sh \
 
 - For monomer predictions, the input FASTA file should contain a single protein sequence.
 - For multimer predictions, the input FASTA file should contain two protein sequences.
+- **NOTE**: Ensure that any stop indicators (`*` or `X`) are removed from the protein sequences before running. 
 
 ### Resource Requirements
 AlphaFold requires significant computational resources:
