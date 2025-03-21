@@ -40,21 +40,39 @@ apptainer pull docker://uvarc/alphafold:2.3.0
 Submission scripts for the Monomer and Multimer presets can be downloaded from this repo or can be used directly from `/mnt/shared/datasets/databases/alphafold`.
 
 ### Monomer Prediction
-For predicting the structure of a single protein chain:
+To run the monomer prediction on the example protein:
 ```bash
 sbatch alphafold_monomer_submit.sh \
     /path/to/alphafold_cropdiv \
     query.fasta \
     /path/to/output/monomer_test_out
 ```
+The output should resemble the [6MRR](https://www.rcsb.org/structure/6MRR) structure.
+
+For predicting the structure of a single protein chain:
+```bash
+sbatch alphafold_monomer_submit.sh \
+    /path/containing/fasta_file \
+    single_protein.fasta \
+    /path/to/output
+```
 
 ### Multimer Prediction
-For predicting the structure of protein complexes:
+To run the multimer prediction on the example proteins:
 ```bash
 sbatch alphafold_multimer_submit.sh \
     /path/to/alphafold_cropdiv \
     multimer_query.fasta \
     /path/to/output/multimer_test_out
+```
+The output should resemble the [1DGC](https://www.rcsb.org/structure/1DGC) structure.
+
+For predicting the structure of protein complexes:
+```bash
+sbatch alphafold_multimer_submit.sh \
+    /path/containing/fasta_file \
+    two_protein.fasta \
+    /path/to/output
 ```
 
 ### Input Format
