@@ -3,7 +3,7 @@
 #SBATCH --partition=gpu
 #SBATCH --gpus=a100:1
 #SBATCH --cpus-per-gpu=4
-#SBATCH --mem-per-gpu=16G
+#SBATCH --mem-per-gpu=32G
 
 # INPUT
 FastaDir=$1         # Full path
@@ -13,6 +13,15 @@ OutputDir=$3        # Full path
 # ENVIRONMENT VARIABLES
 DatabaseDir=/mnt/shared/datasets/databases/alphafold/db
 SingularityImage=/mnt/shared/datasets/databases/alphafold/alphafold_2.3.0.sif
+
+# LOGGING
+echo "#### Running AlphaFold ####"
+echo "Fasta Directory: $FastaDir"
+echo "Fasta Name: $FastaName"
+echo "Output Directory: $OutputDir"
+echo "Database Directory: $DatabaseDir"
+echo "Singularity Image: $SingularityImage"
+echo "-----------------------------------"
 
 # CHECK FOR INPUTS
 if [[ -d $FastaDir && -f $FastaDir/$FastaName && -n $OutputDir ]]; then
@@ -48,6 +57,7 @@ if [[ -d $FastaDir && -f $FastaDir/$FastaName && -n $OutputDir ]]; then
         --num_multimer_predictions_per_model=5 \
         --use_gpu_relax=True
 
+    echo "AlphaFold run completed."
 else
     # PRINT ERROR & USAGE MESSAGES
     echo -e "\nERROR: Expected inputs not found. Please provide the full path to the directory containing the FASTA file, the FASTA file name and the full path to an output directory. \n"
